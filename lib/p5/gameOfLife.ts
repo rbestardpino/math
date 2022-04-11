@@ -21,19 +21,21 @@ let play: boolean;
 export const setup = (p5: p5Type, canvasParentRef: Element): void => {
   p5.createCanvas(500, 500).parent(canvasParentRef);
   p5.frameRate(10);
+
   cols = p5.width / CELL_SIZE;
   rows = p5.height / CELL_SIZE;
   grid = createMatrix<boolean>(cols, rows, () => false);
-  play = false;
-};
 
-export const draw = (p5: p5Type): void => {
-  p5.background(0);
+  play = false;
   p5.createButton("Start/Stop simulation")
     .mousePressed(() => {
       play = !play;
     })
-    .position(10, 10);
+    .position(100, 60);
+};
+
+export const draw = (p5: p5Type): void => {
+  p5.background(0);
 
   paintGrid();
 

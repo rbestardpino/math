@@ -1,3 +1,4 @@
+import MainWrapper from "@components/MainWrapper";
 import { CacheProvider, EmotionCache } from "@emotion/react";
 import createEmotionCache from "@lib/createEmotionCache";
 import theme from "@lib/theme";
@@ -24,7 +25,9 @@ export default function MyApp(props: MyAppProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <MainWrapper>
+          <Component {...pageProps} />
+        </MainWrapper>
       </ThemeProvider>
     </CacheProvider>
   );
