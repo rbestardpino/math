@@ -26,13 +26,13 @@ export default function Navbar() {
               const path = asPath.slice(0, asPath.indexOf(title)) + title;
               return (
                 <Link underline="hover" color="inherit" href={path} key={title}>
-                  {title.replaceAll("_", " ").toUpperCase()}
+                  {title.replace("/_/g", " ").toUpperCase()}
                 </Link>
               );
             })}
             {current && (
               <Typography color="text.primary">
-                {current.replaceAll("_", " ").toUpperCase()}
+                {current.replace("/_/g", " ").toUpperCase()}
               </Typography>
             )}
           </Breadcrumbs>
