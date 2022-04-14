@@ -21,7 +21,7 @@ export default function Drawer({ open, handleClose }: Props) {
     <_Drawer open={open} onClose={handleClose}>
       <Box sx={{ width: 250 }} role="presentation">
         <List>
-          <Link href="/" passHref>
+          <Link href="/" passHref key="home">
             <ListItem sx={{ my: 1 }} button onClick={handleClose}>
               <ListItemIcon>
                 <HomeIcon />
@@ -34,20 +34,17 @@ export default function Drawer({ open, handleClose }: Props) {
           </Link>
           <Divider />
           {topics.map((topic) => (
-            <>
-              <Link href={topic.url} passHref>
-                <ListItem button key={topic.name} onClick={handleClose}>
-                  <ListItemIcon>
-                    <Image src={topic.img} height={30} width={30} />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={topic.name}
-                    primaryTypographyProps={{ noWrap: true }}
-                  />
-                </ListItem>
-              </Link>
-              <Divider />
-            </>
+            <Link href={topic.url} passHref key={topic.name}>
+              <ListItem button onClick={handleClose}>
+                <ListItemIcon>
+                  <Image src={topic.img} height={30} width={30} />
+                </ListItemIcon>
+                <ListItemText
+                  primary={topic.name}
+                  primaryTypographyProps={{ noWrap: true }}
+                />
+              </ListItem>
+            </Link>
           ))}
         </List>
       </Box>
