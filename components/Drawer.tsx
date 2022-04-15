@@ -34,7 +34,7 @@ export default function Drawer({ open, handleClose }: Props) {
           </Link>
           <Divider />
           {topics.map((topic) => (
-            <Link href={topic.url} passHref key={topic.name}>
+            <Link href={topic.fullEndpoint} passHref key={topic.name}>
               <ListItem button onClick={handleClose}>
                 <ListItemIcon>
                   <Image src={topic.img} height={30} width={30} />

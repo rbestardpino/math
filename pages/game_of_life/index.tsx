@@ -1,7 +1,8 @@
 import TopicAbstract from "@components/TopicAbstract";
 import { updateConfig } from "@lib/gameOfLife/config";
 import { draw, mouseClicked, setup } from "@lib/gameOfLife/sketch";
-import topics, { Topic } from "@lib/topics";
+import { useTopic } from "@lib/hooks";
+import { Topic } from "@lib/topics";
 import LaunchIcon from "@mui/icons-material/Launch";
 import PauseIcon from "@mui/icons-material/Pause";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
@@ -18,14 +19,12 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import type { NextPage } from "next";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/router";
 import { useState } from "react";
 
 const Sketch = dynamic(import("react-p5"), { ssr: false });
 
 const GameOfLife: NextPage = () => {
-  const { asPath } = useRouter();
-  const topic = topics.find((topic) => topic.url === asPath);
+  const topic = useTopic();
 
   return (
     <Grid

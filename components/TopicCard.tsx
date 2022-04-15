@@ -11,7 +11,7 @@ interface Props {
 
 export default function TopicCard({ topic }: Props) {
   return (
-    <CardActionArea href={topic.url}>
+    <CardActionArea href={topic.fullEndpoint}>
       <Paper variant="outlined" sx={{ p: 2 }}>
         <Grid
           container

@@ -1,4 +1,4 @@
-import TopicCard from "@components/TopicCard";
+import TopicList from "@components/TopicList";
 import topics from "@lib/topics";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -32,14 +32,7 @@ const Home: NextPage = () => {
           </Typography>
         </Paper>
       </Grid>
-      <Grid item xs>
-        <Typography variant="h4">Topics</Typography>
-      </Grid>
-      {topics.map((topic) => (
-        <Grid item xs key={topic.name}>
-          <TopicCard topic={topic} />
-        </Grid>
-      ))}
+      <TopicList topics={topics} />
     </Grid>
   );
 };

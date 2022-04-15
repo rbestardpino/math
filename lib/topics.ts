@@ -9,8 +9,8 @@ const topics: Topic[] = [
     description:
       "The Game of Life, also known simply as Life, is a cellular automaton devised by the British mathematician John Horton Conway in 1970. It is a zero-player game, meaning that its evolution is determined by its initial state, requiring no further input. One interacts with the Game of Life by creating an initial configuration and observing how it evolves. It is Turing complete and can simulate a universal constructor or any other Turing machine.",
     img: gameOfLifeImg,
-    url: "/game_of_life",
-    previousUrls: [],
+    endpoint: "/game_of_life",
+    fullEndpoint: "/game_of_life",
     references: [
       {
         url: "https://playgameoflife.com/",
@@ -43,8 +43,8 @@ const topics: Topic[] = [
     description:
       "Chaos theory is an interdisciplinary scientific theory and branch of mathematics focused on underlying patterns and deterministic laws highly sensitive to initial conditions in dynamical systems that were thought to have completely random states of disorder and irregularities.",
     img: chaosImg,
-    url: "/chaos",
-    previousUrls: [],
+    endpoint: "/chaos",
+    fullEndpoint: "/chaos",
     references: [],
     suptopics: [
       {
@@ -52,8 +52,8 @@ const topics: Topic[] = [
         description:
           "The Lorenz system is a system of ordinary differential equations first studied by mathematician and meteorologist Edward Lorenz. It is notable for having chaotic solutions for certain parameter values and initial conditions. In particular, the Lorenz attractor is a set of chaotic solutions of the Lorenz system.",
         img: lorenzAttractorImg,
-        url: "/lorenz_attractor",
-        previousUrls: ["/chaos"],
+        endpoint: "/lorenz_attractor",
+        fullEndpoint: "/chaos/lorenz_attractor",
         references: [],
       },
     ],
@@ -64,8 +64,8 @@ export interface Topic {
   name: string;
   description: string;
   img: StaticImageData;
-  url: string;
-  previousUrls: string[];
+  endpoint: string;
+  fullEndpoint: string;
   references: Reference[];
   suptopics?: Topic[];
 }
